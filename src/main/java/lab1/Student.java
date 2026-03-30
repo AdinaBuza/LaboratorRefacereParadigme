@@ -12,6 +12,7 @@ public class Student {
         this.formatieDeStudiu = formatieDeStudiu;
     }
 
+
     @Override
     public String toString() {
         return "Student{" + "numarMatricol=" + numarMatricol + ", prenume='" + prenume + '\'' +
