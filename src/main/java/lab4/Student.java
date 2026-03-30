@@ -16,9 +16,8 @@ public class Student {
         this.formatieDeStudiu = formatieDeStudiu;
     }
 
-    public void setNota(float nota) {
-        this.nota = nota;
-    }
+    public void setNota(float nota) { this.nota = nota; }
+    public float getNota() { return nota; }
 
     @Override
     public boolean equals(Object o) {
@@ -29,17 +28,11 @@ public class Student {
     }
 
     @Override
-    public int hashCode() {
-        return Objects.hash(numarMatricol);
-    }
+    public int hashCode() { return Objects.hash(numarMatricol); }
 
     @Override
     public String toString() {
-        return "Student{" +
-                "ID=" + numarMatricol +
-                ", nume='" + prenume + " " + nume + '\'' +
-                ", grupa='" + formatieDeStudiu + '\'' +
-                ", nota=" + nota +
-                '}';
+        return "Student{" + "ID=" + numarMatricol + ", nume='" + prenume + " " + nume + '\'' +
+                ", nota=" + nota + '}';
     }
 }
