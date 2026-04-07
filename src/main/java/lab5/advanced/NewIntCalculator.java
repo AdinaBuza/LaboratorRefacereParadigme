@@ -2,6 +2,7 @@ package lab5.advanced;
 
 public class NewIntCalculator extends ACalculator {
 
+
     public NewIntCalculator(Integer valoareInitiala) {
         this.state = valoareInitiala;
     }

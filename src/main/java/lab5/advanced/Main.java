@@ -12,5 +12,6 @@ public class Main {
         Double resDouble = (Double) doubleCalc.add(5.0).subtract(3.3).multiply(2.2).result();
         System.out.println("Rezultat Double: (10 + 5 - 3.3) * 2.2 = " + resDouble);
 
+
     }
 }

@@ -8,6 +8,7 @@ public abstract class ACalculator {
         return state;
     }
 
+
     public ACalculator clear() {
         this.init();
         return this;
