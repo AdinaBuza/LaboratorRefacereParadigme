@@ -11,6 +11,7 @@ public class NewIntCalculator extends ACalculator {
         this.state = 0;
     }
 
+
     public NewIntCalculator add(Integer v) {
         this.state = (Integer) state + v;
         return this;

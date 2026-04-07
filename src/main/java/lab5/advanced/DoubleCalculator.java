@@ -11,6 +11,7 @@ public class DoubleCalculator extends ACalculator {
         this.state = 0.0;
     }
 
+
     public DoubleCalculator add(Double v) {
         this.state = (Double) state + v;
         return this;
