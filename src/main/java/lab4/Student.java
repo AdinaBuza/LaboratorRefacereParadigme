@@ -32,7 +32,11 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Student{" + "ID=" + numarMatricol + ", nume='" + prenume + " " + nume + '\'' +
-                ", nota=" + nota + '}';
+        return "Student{" +
+                "ID=" + numarMatricol +
+                ", nume='" + prenume + " " + nume + '\'' +
+                ", grupa='" + formatieDeStudiu + '\'' + // <-- ACEASTA LIPSIA!
+                ", nota=" + nota +
+                '}';
     }
 }
