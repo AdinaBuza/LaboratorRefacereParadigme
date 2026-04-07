@@ -27,4 +27,5 @@ public class DoubleCalculator extends ACalculator {
         this.state = (Double) state * v;
         return this;
     }
+
 }

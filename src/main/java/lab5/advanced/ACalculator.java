@@ -14,5 +14,6 @@ public abstract class ACalculator {
         return this;
     }
 
+
     protected abstract void init();
 }

@@ -7,6 +7,7 @@ public class NewIntCalculator extends ACalculator {
         this.state = valoareInitiala;
     }
 
+
     @Override
     protected void init() {
         this.state = 0;
