@@ -35,7 +35,7 @@ public class Student {
         return "Student{" +
                 "ID=" + numarMatricol +
                 ", nume='" + prenume + " " + nume + '\'' +
-                ", grupa='" + formatieDeStudiu + '\'' + // <-- ACEASTA LIPSIA!
+                ", grupa='" + formatieDeStudiu + '\'' +
                 ", nota=" + nota +
                 '}';
     }

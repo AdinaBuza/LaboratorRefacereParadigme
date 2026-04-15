@@ -38,7 +38,8 @@ public class Main {
                 mapStudenti.put(id, new Student(id, b[1].trim(), b[2].trim(), b[3].trim()));
             }
         }
-
+           //Map este o interfață   stocarea datelor sub formă de perechi cheie: valoare.
+        //HashMap este o clasa care implementează acea interfață
         List<String> liniiNote = Files.readAllLines(Paths.get("note_anon.txt"));
         for (String linie : liniiNote) {
             String[] b = linie.split(",");

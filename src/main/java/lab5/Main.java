@@ -1,5 +1,7 @@
 package lab5;
 
+import lab4.Student;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -20,7 +22,7 @@ public class Main {
         System.out.println("Rezultat AdvancedCalculator = " + result2);
 
         System.out.println("\n    EXERCITIUL 5.5.3 (Studenti Bursieri)    ");
-        List<StudentBursier> bursieri = new ArrayList<>();
+        List<Student> bursieri = new ArrayList<>();
 
         bursieri.add(new StudentBursier(1025, "Andrei", "Popa", "ISM141/2", 8.70f, 725.50));
         bursieri.add(new StudentBursier(1024, "Ioan", "Mihalcea", "ISM141/1", 9.80f, 801.10));
@@ -37,9 +39,9 @@ public class Main {
         }
     }
 
-    public static void salveazaInFisier(String numeFisier, List<StudentBursier> lista) throws IOException {
+    public static void salveazaInFisier(String numeFisier, List<Student> lista) throws IOException {
         List<String> randuri = new ArrayList<>();
-        for (StudentBursier b : lista) {
+        for (Student b : lista) {
             randuri.add(b.toString());
         }
         Files.write(Paths.get(numeFisier), randuri);
