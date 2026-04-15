@@ -17,7 +17,7 @@ public class DoubleCalculatorTest {
     @Test
     @DisplayName("Test adunare Double")
     public void testAdd() {
-        // Act
+
         calc.add(10.5).add(4.5);
 
         Assertions.assertEquals(15.0, calc.result(), 0.001);
