@@ -1,33 +1,71 @@
 package lab7;
 
-import lab7.forms.Form;
-import lab7.forms.Triangle;
-import lab7.forms.Circle;
-import lab7.forms.Square;
-import lab7.util.PasswordMaker;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println(" \nRezolvare 7.6.1: Utilizare camp static \n");
+        List<Student> studenti = creeazaStudenti();
 
-        Triangle tri = new Triangle(1.1F, 2.0F, "red");
-        Circle c = new Circle(1.5F, "yellow");
-        Square sq = new Square(1.2F, "blue");
-        Form f = new Form("green");
+        List<Student> grupa1 = new ArrayList<>();
+        List<Student> grupa2 = new ArrayList<>();
 
-        System.out.println(tri);
-        System.out.println(f);
-        System.out.println("Total instance count is " + Form.getInstanceCount());
+        imparteInGrupe(studenti, grupa1, grupa2);
 
-        System.out.println("\nRezolvare 7.6.2: Utilizare Singleton \n");
+        mutaStudent(grupa1, grupa2, "TI");
 
+        afiseazaGrupe(grupa1, grupa2);
+    }
 
-        PasswordMaker pm1 = PasswordMaker.getInstance();
+    public static List<Student> creeazaStudenti() {
+        List<Student> studenti = new ArrayList<>();
 
-        System.out.println("Password 1: " + pm1.getPassword());
-        System.out.println("Password 2: " + PasswordMaker.getInstance().getPassword());
+        studenti.add(new Student(1, "Ion", "Popescu", "Calc", 9.5f));
+        studenti.add(new Student(2, "Ana", "Ionescu", "TI", 8.7f));
+        studenti.add(new Student(3, "Mihai", "Georgescu", "ISM", 7.8f));
+        studenti.add(new Student(4, "Elena", "Dumitrescu", "Calc", 9.1f));
+        studenti.add(new Student(5, "Paul", "Stan", "TI", 6.5f));
 
-        System.out.println("Number of times getInstance() has been called: " + PasswordMaker.getCallingCounts());
+        return studenti;
+    }
+
+    public static void imparteInGrupe(List<Student> studenti, List<Student> grupa1, List<Student> grupa2) {
+        int jumatate = (studenti.size() + 1) / 2;
+
+        for (int i = 0; i < studenti.size(); i++) {
+            if (i < jumatate) {
+                grupa1.add(studenti.get(i));
+            } else {
+                grupa2.add(studenti.get(i));
+            }
+        }
+    }
+
+    public static void mutaStudent(List<Student> grupa1, List<Student> grupa2, String nouaFormatie) {
+        Student deMutat = grupa1.get(0);
+
+        Student studentMutat = schimbaFormatia(deMutat, nouaFormatie);
+
+        grupa1.remove(deMutat);
+        grupa2.add(studentMutat);
+    }
+
+    public static void afiseazaGrupe(List<Student> grupa1, List<Student> grupa2) {
+        System.out.println("Grupa 1:");
+        grupa1.forEach(System.out::println);
+
+        System.out.println("\nGrupa 2:");
+        grupa2.forEach(System.out::println);
+    }
+
+    public static Student schimbaFormatia(Student st, String nouaFormatie) {
+        return new Student(
+                st.getNumarMatricol(),
+                st.getPrenume(),
+                st.getNume(),
+                nouaFormatie,
+                st.getNota()
+        );
     }
 }
